@@ -27,11 +27,11 @@ for movie in movies:
         # a의 text를 찍어본다.
         rank = movie.select_one('td:nth-child(1) > img')['alt']  # img 태그의 alt 속성값을 가져오기
         title = a_tag.text  # a 태그 사이의 텍스트를 가져오기
-        star = movie.select_one('td.point').text  # td 태그 사이의 텍스트를 가져오기
+        point = movie.select_one('td.point').text  # td 태그 사이의 텍스트를 가져오기
         dec={
             'title':title,
             'rank':rank,
-            'star':star}
+            'star':point}
 
         db.movies.insert_one(dec)
 
